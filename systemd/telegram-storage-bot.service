@@ -1,0 +1,14 @@
+[Unit]
+Description=Telegram Storage Bot
+After=network.target telegram-backend.service
+
+[Service]
+Type=simple
+User=ubuntu
+WorkingDirectory=/home/ubuntu/telegram-platform/bots/storage_bot
+ExecStart=/usr/bin/python3 bot.py
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target
